@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Guiding Hand Initiative (TGHI) - Building Futures, Healing Lives</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --secondary-blue: #4285f4;
+            --light-blue: #e8f0fe;
+            --accent-orange: #fa7b17;
+            --light-orange: #fce8e6;
+            --dark-text: #202124;
+            --light-text: #5f6368;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-weight: 600;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: var(--dark-text) !important;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTIwMCA4MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTIwMCAwSDB2ODAwaDEyMDBWMHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjxwYXRoIGQ9Ik0xMjAwIDBoLTMwMHY4MDBoMzAwVjB6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDciLz48cGF0aCBkPSJNMTIwMCAwaC0xMDB2ODAwaDEwMFYweiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L2c+PC9zdmc+');
+            opacity: 0.1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-orange);
+            border-color: var(--accent-orange);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e56a0c;
+            border-color: #e56a0c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline-light {
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            margin-left: 15px;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-blue), var(--accent-orange));
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            margin-bottom: 50px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-blue);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            top: 20px;
+            background-color: white;
+            transform: rotate(45deg);
+            box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: -10px;
+            top: 20px;
+            background-color: white;
+            transform: rotate(45deg);
+            box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        /* Founder's Note */
+        .founders-note {
+            background-color: var(--light-blue);
+        }
+        
+        .quote-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-orange);
+        }
+        
+        .quote-icon {
+            font-size: 2rem;
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+        }
+        
+        blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--dark-text);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .founder-name {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        /* Programs Section */
+        .program-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s;
+            border-top: 4px solid transparent;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .program-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* SDGs Section */
+        .sdg-section {
+            background-color: var(--light-blue);
+        }
+        
+        .sdg-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .sdg-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .sdg-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .sdg-icon i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+        }
+        
+        .sdg-tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            width: 200px;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .sdg-item:hover .sdg-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Team Section */
+        .team-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-img {
+            height: 250px;
+            background-color: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .team-img i {
+            font-size: 5rem;
+            color: var(--primary-blue);
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        /* Partnerships */
+        .partners-section {
+            background-color: var(--light-blue);
+        }
+        
+        .partner-logo {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .partner-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .partner-logo i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+        
+        .form-control {
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(26, 115, 232, 0.25);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: white;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links h5 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TGHI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#founder">Founder's Note</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sdgs">SDGs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1>The Guiding Hand Initiative</h1>
+                    <p class="lead">Building Futures, Healing Lives</p>
+                    <p>Empowering first-generation learners and marginalized youth in Tanzania through mentorship, skills development, and community engagement.</p>
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="#contact" class="btn btn-outline-light">Join Us</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="logo-placeholder" style="background-color: rgba(255,255,255,0.2); border-radius: 20px; padding: 40px; display: inline-block;">
+                            <h2 style="font-size: 2.5rem; margin: 0;">TGHI</h2>
+                            <p style="margin: 10px 0 0; font-size: 1.2rem;">EST. 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About TGHI</h2>
+            
+            <div class="row about-content">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3>Our Vision</h3>
+                    <p>A future where every first-generation learner and marginalized youth in Tanzania has equal access to guidance, education, skills, and the opportunity to thrive.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To empower first-generation learners and underserved youth through mentorship, skills development, inclusive digital education, and climate-conscious community engagement.</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                    <h3>Our Core Values</h3>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-balance-scale fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Equity</h5>
+                            <p>We believe in fair opportunities for all — regardless of background.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-hands-helping fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Empowerment</h5>
+                            <p>We equip youth with the tools, mindset, and support to take control of their future.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Integrity</h5>
+                            <p>We operate with transparency, accountability, and ethical leadership.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="fas fa-lightbulb fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Innovation</h5>
+                            <p>We adapt, create, and integrate modern solutions to tackle youth challenges.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-center mb-5" data-aos="fade-up">Our Journey</h3>
+            <div class="timeline" data-aos="fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h4>Concept Development</h4>
+                        <p>Initial research and concept development for TGHI, identifying the unique challenges faced by first-generation learners in Tanzania.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Early 2025</div>
+                        <h4>Foundation Established</h4>
+                        <p>Formal establishment of The Guiding Hand Initiative with a clear vision and mission to serve marginalized youth.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Mid 2025</div>
+                        <h4>Program Development</h4>
+                        <p>Development of core programs focusing on mentorship, digital skills, climate action, and community engagement.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Present</div>
+                        <h4>Implementation & Growth</h4>
+                        <p>Launching programs and building partnerships to expand our reach and impact across Tanzania.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder's Note -->
+    <section id="founder" class="founders-note">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Founder's Note</h2>
+            <h3 class="text-center mb-5" data-aos="fade-up">What It Truly Means to Be of Service - The Heart of TGHI</h3>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="quote-card" data-aos="fade-up">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <blockquote>
+                            "We serve not for recognition, but because we know how it feels to lack support—and we choose to become the kind of help we once wished for."
+                        </blockquote>
+                        <p class="founder-name">— Barnaba Zakaria Madirisha, Founder & Executive Director</p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6" data-aos="fade-right">
+                            <div class="quote-card">
+                                <h4>Service from the Heart, Not the Ego</h4>
+                                <p>Anyone can serve. But not all service is genuine. Sometimes, people help others to be seen, praised, or remembered - not necessarily to make a real difference.</p>
+                                <p>At TGHI, we constantly ask ourselves: Are we serving to be noticed? Or are we truly trying to understand, uplift, and walk with others through their challenges?</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-left">
+                            <div class="quote-card">
+                                <h4>Our Approach to Genuine Service</h4>
+                                <p>We aim to serve first-generation learners and marginalized youth with honesty, dignity, and humanity.</p>
+                                <ul>
+                                    <li>Reflecting on our intentions</li>
+                                    <li>Practicing empathy</li>
+                                    <li>Staying humble</li>
+                                    <li>Focusing on real needs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Programs & Focus Areas</h2>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h4>Mentorship & Role Modelling</h4>
+                        <p>Peer and expert mentorship programs, school-based support systems to guide first-generation learners through their educational journey.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Digital & Practical Skills</h4>
+                        <p>Computer literacy, entrepreneurship, job readiness, robotics, drone technology, and innovation workshops to prepare youth for the future.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Climate Action & Sustainability</h4>
+                        <p>Youth-led environmental projects, education on climate change, clean energy, and green entrepreneurship.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4>Health & Well-being</h4>
+                        <p>Mental health awareness, SRHR and nutrition sessions, particularly for adolescent girls and young mothers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community Engagement</h4>
+                        <p>School-community dialogues, engaging with local leaders and partners to improve youth policies and advocacy.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>Partnership Building</h4>
+                        <p>Building a network of grassroots and global partners to amplify our impact and reach more marginalized youth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SDGs Section -->
+    <section id="sdgs" class="sdg-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Alignment with Sustainable Development Goals</h2>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="sdg-item">
+                        <div class="sdg-icon">
+                            <i class="fas fa-heart"></i>
+                            <div class="sdg-tooltip">Good Health and Well-being: Mental health, SRHR, and well-being programs.</div>
+                        </div>
+                        <h5>SDG 3</h5>
+                        <p>Good Health & Well-being</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="sdg-item">
+                        <div class="sdg-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="sdg-tooltip">Quality Education: Access, retention, and inclusive education support.</div>
+                        </div>
+                        <h5>SDG 4</h5>
+                        <p>Quality Education</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="sdg-item">
+                        <div class="sdg-icon">
+                            <i class="fas fa-venus"></i>
+                            <div class="sdg-tooltip">Gender Equality: Inclusion of girls and young women in leadership and education.</div>
+                        </div>
+                        <h5>SDG 5</h5>
+                        <p>Gender Equality</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="sdg-item">
+                        <div class="sdg-icon">
+                            <i class="fas fa-briefcase"></i>
+                            <div class="sdg-tooltip">Decent Work & Economic Growth: Entrepreneurship and work-readiness skills.</div>
+                        </div>
+                        <h5>SDG 8</h5>
+                        <p>Decent Work & Economic Growth</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="sdg-item">
+                        <div class="sdg-icon">
+                            <i class="fas fa-balance-scale"></i>
+                            <div class="sdg-tooltip">Reduced Inequalities: Focus on the most underserved and excluded youth.</div>
+                        </div>
+                        <h5>SDG 10</h5>
+                        <p>Reduced Inequalities</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="sdg-item">
+                        <div class="sdg-icon">
+                            <i class="fas fa-tree"></i>
+                            <div class="sdg-tooltip">Climate Action: Youth-led sustainability and environmental education.</div>
+                        </div>
+                        <h5>SDG 13</h5>
+                        <p>Climate Action</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="sdg-item">
+                        <div class="sdg-icon">
+                            <i class="fas fa-handshake"></i>
+                            <div class="sdg-tooltip">Partnerships for the Goals: Building a network of grassroots and global partners.</div>
+                        </div>
+                        <h5>SDG 17</h5>
+                        <p>Partnerships for the Goals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Team</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8" data-aos="fade-up">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="team-info">
+                            <h4>Barnaba Zakaria Madirisha</h4>
+                            <p class="text-primary">Founder & Executive Director</p>
+                            <p>Barnaba is passionate about youth empowerment and education equity. His vision for TGHI stems from personal experience with the challenges faced by first-generation learners in Tanzania.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <h3>Join Our Team</h3>
+                <p>We're looking for passionate individuals to join our mission. Contact us to learn about volunteer opportunities.</p>
+                <a href="#contact" class="btn btn-primary">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Partners</h2>
+            <p class="text-center mb-5" data-aos="fade-up">We collaborate with organizations that share our vision for youth empowerment and community development.</p>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="partner-logo">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h5 class="text-center">Build Future Initiative</h5>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="partner-logo">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h5 class="text-center">Binti Kiranja Initiative</h5>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="partner-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h5 class="text-center">Nisajile Foundation</h5>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="partner-logo">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h5 class="text-center">UNDP Tanzania</h5>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="partner-logo">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h5 class="text-center">YUNA Tanzania</h5>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="partner-logo">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h5 class="text-center">Unite Scholars Program</h5>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="partner-logo">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h5 class="text-center">Climate Action Partners</h5>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="partner-logo">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h5 class="text-center">Education Grantmakers</h5>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <h3>Become a Partner</h3>
+                <p>Interested in partnering with us? Contact us to explore collaboration opportunities.</p>
+                <a href="#contact" class="btn btn-primary">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
+            
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>We'd love to hear from you. Reach out to learn more about our programs, volunteer opportunities, or partnership possibilities.</p>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>barnabamadirisha@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+255 782 081 535</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Tanzania (Mainland & Zanzibar)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">TGHI</div>
+                    <p>The Guiding Hand Initiative (TGHI) is a youth-led Tanzanian organization dedicated to empowering first-generation learners and marginalized youth.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#programs">Programs</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Programs</h5>
+                        <ul>
+                            <li><a href="#programs">Mentorship</a></li>
+                            <li><a href="#programs">Digital Skills</a></li>
+                            <li><a href="#programs">Climate Action</a></li>
+                            <li><a href="#programs">Health & Well-being</a></li>
+                            <li><a href="#programs">Community Engagement</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><i class="fas fa-envelope me-2"></i> barnabamadirisha@gmail.com</li>
+                            <li><i class="fas fa-phone me-2"></i> +255 782 081 535</li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Tanzania (Mainland & Zanzibar)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 The Guiding Hand Initiative (TGHI). All Rights Reserved. | Building Futures, Healing Lives</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Library for Scroll Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for navbar links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
+</body>
+</html>
