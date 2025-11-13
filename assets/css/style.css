@@ -70,6 +70,7 @@ html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
 }
 
 /* Typography */
@@ -336,12 +337,13 @@ a {
     width: 180px;
     height: 180px;
     object-fit: cover;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem auto;
+    display: block;
     border-radius: 50%;
     border: 6px solid rgba(255, 255, 255, 0.4);
     padding: 0;
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 
+    box-shadow:
         0 10px 40px rgba(0, 0, 0, 0.3),
         0 0 0 12px rgba(255, 255, 255, 0.1),
         0 0 60px rgba(249, 168, 38, 0.4);
@@ -1056,6 +1058,7 @@ section#about {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
     transition: var(--transition-smooth);
 }
 
@@ -1186,6 +1189,7 @@ section#about {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
     transition: var(--transition-smooth);
 }
 
@@ -2878,8 +2882,72 @@ section#about {
         text-align: center;
     }
 
+    /* Keep footer background logos visible on tablets and large phones */
     .footer-bg-logos {
-        display: none;
+        display: block;
+        opacity: 0.07 !important;
+    }
+
+    .footer-logo-float {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Pixel 7 and Similar Devices (481px - 520px) */
+@media (min-width: 481px) and (max-width: 520px) {
+    /* Hero Section - Optimized for Pixel 7 (412×915) */
+    .hero-logo {
+        width: 100px;
+        height: 100px;
+        border: 4px solid rgba(255, 255, 255, 0.4);
+        margin: 0 auto 1.5rem auto;
+        display: block;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+        line-height: 1.2;
+    }
+
+    .hero-tagline {
+        font-size: 1.25rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+
+    .hero-buttons .btn {
+        font-size: 0.95rem;
+        padding: 13px 25px;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    /* Footer - Show background logos on Pixel 7 */
+    .footer-bg-logos {
+        display: block;
+        opacity: 0.06 !important;
+    }
+
+    .footer-logo-float {
+        width: 70px;
+        height: 70px;
+    }
+
+    .footer-logo-wrapper {
+        width: 75px;
+        height: 75px;
+    }
+
+    .footer-logo {
+        width: 75px;
+        height: 75px;
     }
 }
 
@@ -2904,19 +2972,21 @@ section#about {
     .hero-title {
         font-size: 1.8rem;
     }
-    
+
     .hero-tagline {
         font-size: 1.2rem;
     }
-    
+
     .hero-subtitle {
         font-size: 0.95rem;
     }
-    
+
     .hero-logo {
         width: 90px;
         height: 90px;
         border: 3px solid rgba(255, 255, 255, 0.4);
+        margin: 0 auto 1.5rem auto;
+        display: block;
     }
     
     /* Sections */
@@ -2967,10 +3037,21 @@ section#about {
         font-size: 0.95rem;
         padding: 0.7rem 1.5rem;
     }
-    
+
     .btn-lg {
         font-size: 1rem;
         padding: 0.8rem 2rem;
+    }
+
+    /* Footer background logos visible */
+    .footer-bg-logos {
+        display: block;
+        opacity: 0.05 !important;
+    }
+
+    .footer-logo-float {
+        width: 65px;
+        height: 65px;
     }
 }
 
@@ -3380,6 +3461,16 @@ section#about {
         bottom: 20px;
         right: 20px;
     }
+
+    /* Adjust footer background logos for very small screens */
+    .footer-bg-logos {
+        opacity: 0.04 !important;
+    }
+
+    .footer-logo-float {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 /* Landscape Mobile Phones */
@@ -3534,6 +3625,23 @@ section#about {
         max-width: 1320px;
         padding-left: 15px;
         padding-right: 15px;
+    }
+}
+
+/* Ensure containers have proper padding on mobile */
+@media (max-width: 767px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 
