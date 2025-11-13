@@ -570,12 +570,201 @@ window.addEventListener('scroll', debouncedScrollHandler);
 // 24. CONSOLE MESSAGE
 // ===================================
 
+// Add SVG gradient for volunteer circle
+document.addEventListener('DOMContentLoaded', function() {
+    const svg = document.querySelector('.count-progress');
+    if (svg) {
+        // Create gradient definition
+        const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+        const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+        gradient.setAttribute('id', 'countGradient');
+        gradient.setAttribute('x1', '0%');
+        gradient.setAttribute('y1', '0%');
+        gradient.setAttribute('x2', '100%');
+        gradient.setAttribute('y2', '100%');
+        
+        const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+        stop1.setAttribute('offset', '0%');
+        stop1.setAttribute('style', 'stop-color:#1E5A8E;stop-opacity:1');
+        
+        const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+        stop2.setAttribute('offset', '100%');
+        stop2.setAttribute('style', 'stop-color:#F9A826;stop-opacity:1');
+        
+        gradient.appendChild(stop1);
+        gradient.appendChild(stop2);
+        defs.appendChild(gradient);
+        svg.insertBefore(defs, svg.firstChild);
+        
+        // Animate on scroll
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    svg.querySelector('.count-fill').style.animation = 'fillCircle 2s ease-out forwards';
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(svg);
+    }
+});
+
+// ===================================
+// 25. PARTNER CAROUSEL ANIMATION ENHANCEMENTS
+// ===================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselWrappers = document.querySelectorAll('.partners-carousel-wrapper');
+
+    carouselWrappers.forEach(wrapper => {
+        const carouselRow = wrapper.querySelector('.partners-carousel-row');
+
+        // Pause animation on hover for better UX
+        wrapper.addEventListener('mouseenter', function() {
+            carouselRow.style.animationPlayState = 'paused';
+        });
+
+        wrapper.addEventListener('mouseleave', function() {
+            carouselRow.style.animationPlayState = 'running';
+        });
+    });
+
+    // Add shimmer effect on scroll into view
+    const partnerObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const cards = entry.target.querySelectorAll('.partner-logo-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.animation = 'partnerShimmer 1s ease-out';
+                    }, index * 100);
+                });
+                partnerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    carouselWrappers.forEach(wrapper => {
+        partnerObserver.observe(wrapper);
+    });
+});
+
+// ===================================
+// 26. TEAM MEMBER PHOTO CARDS ANIMATION
+// ===================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const teamCards = document.querySelectorAll('.team-member-photo-card');
+
+    // Animate on scroll with stagger effect
+    const teamObserver = new IntersectionObserver(function(entries) {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                }, index * 150);
+                teamObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    teamCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(40px) scale(0.95)';
+        card.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        teamObserver.observe(card);
+    });
+});
+
+// ===================================
+// 27. VOLUNTEER COUNT ANIMATION
+// ===================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const countCircle = document.querySelector('.count-circle');
+
+    if (countCircle) {
+        const countObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Trigger the circle fill animation
+                    const fillCircle = entry.target.querySelector('.count-fill');
+                    if (fillCircle) {
+                        fillCircle.style.animation = 'fillCircle 2s ease-out forwards';
+                    }
+
+                    // Animate the count number
+                    const countNumber = entry.target.querySelector('.count-number');
+                    if (countNumber) {
+                        const targetNumber = parseInt(countCircle.dataset.count) || 15;
+                        animateCountUp(countNumber, 0, targetNumber, 2000);
+                    }
+
+                    countObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        countObserver.observe(countCircle);
+    }
+});
+
+// Animate count up function
+function animateCountUp(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const current = Math.floor(progress * (end - start) + start);
+        element.textContent = current + '+';
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// ===================================
+// 28. FOOTER ANIMATIONS ON SCROLL
+// ===================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.querySelector('.footer');
+    const footerBgLogos = document.querySelector('.footer-bg-logos');
+
+    if (footer && footerBgLogos) {
+        const footerObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Trigger the background logos reveal animation
+                    footerBgLogos.style.animation = 'revealRewards 1s ease-out 0.5s forwards';
+                    footerObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        footerObserver.observe(footer);
+    }
+
+    // Add pulse effect to footer social icons on hover
+    const socialIcons = document.querySelectorAll('.footer-social-icon');
+    socialIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', function() {
+            this.style.animation = 'pulse 0.5s ease-in-out';
+        });
+        icon.addEventListener('animationend', function() {
+            this.style.animation = '';
+        });
+    });
+});
+
 console.log('%c TGHI - The Guiding Hand Initiative ', 'background: linear-gradient(135deg, #1E5A8E 0%, #F9A826 100%); color: white; font-size: 20px; font-weight: bold; padding: 10px;');
 console.log('%c Building Futures, Healing Lives ', 'color: #F9A826; font-size: 16px; font-weight: bold;');
 console.log('%c Website developed with ❤️ for empowering youth ', 'color: #1E5A8E; font-size: 14px;');
 
 // ===================================
-// 25. EXPORT FUNCTIONS (if using modules)
+// 29. EXPORT FUNCTIONS (if using modules)
 // ===================================
 
 // Uncomment if using ES6 modules

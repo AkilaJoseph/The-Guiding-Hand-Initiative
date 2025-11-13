@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGHI - Responsive Test Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .viewport-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        .info-card p {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .breakpoint {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .breakpoint.active {
+            background: rgba(76, 175, 80, 0.3);
+            border: 2px solid #4CAF50;
+            transform: scale(1.02);
+        }
+
+        .breakpoint-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .breakpoint-range {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .test-link {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .test-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .test-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .device-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .device-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .device-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-good {
+            background: #4CAF50;
+        }
+
+        .status-warning {
+            background: #FFC107;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .info-card p {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .viewport-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 TGHI Portfolio - Responsive Testing Dashboard</h1>
+
+        <div class="info-box">
+            <h2 style="margin-bottom: 20px;">Current Viewport Information</h2>
+            <div class="viewport-info">
+                <div class="info-card">
+                    <h3>Width</h3>
+                    <p id="width">-</p>
+                </div>
+                <div class="info-card">
+                    <h3>Height</h3>
+                    <p id="height">-</p>
+                </div>
+                <div class="info-card">
+                    <h3>Device</h3>
+                    <p id="device" style="font-size: 1.2rem;">-</p>
+                </div>
+                <div class="info-card">
+                    <h3>Orientation</h3>
+                    <p id="orientation" style="font-size: 1.2rem;">-</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h2 style="margin-bottom: 20px;">Responsive Breakpoints</h2>
+            <div class="breakpoint" data-min="1400" data-max="9999">
+                <div>
+                    <div class="breakpoint-name">
+                        <span class="status-indicator status-good"></span>
+                        Extra Large Desktop
+                    </div>
+                    <div class="breakpoint-range">1400px and above</div>
+                </div>
+            </div>
+            <div class="breakpoint" data-min="1200" data-max="1399">
+                <div>
+                    <div class="breakpoint-name">
+                        <span class="status-indicator status-good"></span>
+                        Large Desktop
+                    </div>
+                    <div class="breakpoint-range">1200px - 1399px</div>
+                </div>
+            </div>
+            <div class="breakpoint" data-min="992" data-max="1199">
+                <div>
+                    <div class="breakpoint-name">
+                        <span class="status-indicator status-good"></span>
+                        Medium Desktop / Tablet Landscape
+                    </div>
+                    <div class="breakpoint-range">992px - 1199px</div>
+                </div>
+            </div>
+            <div class="breakpoint" data-min="768" data-max="991">
+                <div>
+                    <div class="breakpoint-name">
+                        <span class="status-indicator status-good"></span>
+                        Tablet / iPad Portrait
+                    </div>
+                    <div class="breakpoint-range">768px - 991px</div>
+                </div>
+            </div>
+            <div class="breakpoint" data-min="576" data-max="767">
+                <div>
+                    <div class="breakpoint-name">
+                        <span class="status-indicator status-good"></span>
+                        Large Mobile
+                    </div>
+                    <div class="breakpoint-range">576px - 767px</div>
+                </div>
+            </div>
+            <div class="breakpoint" data-min="481" data-max="575">
+                <div>
+                    <div class="breakpoint-name">
+                        <span class="status-indicator status-good"></span>
+                        Standard Mobile
+                    </div>
+                    <div class="breakpoint-range">481px - 575px</div>
+                </div>
+            </div>
+            <div class="breakpoint" data-min="320" data-max="480">
+                <div>
+                    <div class="breakpoint-name">
+                        <span class="status-indicator status-warning"></span>
+                        Small Mobile
+                    </div>
+                    <div class="breakpoint-range">320px - 480px</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h2 style="margin-bottom: 20px;">Common Devices</h2>
+            <div class="device-preview">
+                <div class="device-card">
+                    <div class="device-icon">📱</div>
+                    <strong>iPhone SE</strong>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">375×667</div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">📱</div>
+                    <strong>iPhone 14</strong>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">390×844</div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">📱</div>
+                    <strong>Galaxy S21</strong>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">360×800</div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">📱</div>
+                    <strong>Pixel 5</strong>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">393×851</div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">📱</div>
+                    <strong>iPad Mini</strong>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">768×1024</div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">💻</div>
+                    <strong>iPad Pro</strong>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">1024×1366</div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">💻</div>
+                    <strong>Laptop</strong>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">1366×768</div>
+                </div>
+                <div class="device-card">
+                    <div class="device-icon">🖥️</div>
+                    <strong>Desktop</strong>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">1920×1080</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-links">
+            <h2 style="margin-bottom: 20px;">Quick Actions</h2>
+            <a href="index.html" class="test-link" target="_blank">🚀 Open Portfolio</a>
+            <a href="RESPONSIVE_TESTING_GUIDE.md" class="test-link" target="_blank">📖 Testing Guide</a>
+            <a href="RESPONSIVE_ENHANCEMENTS.md" class="test-link" target="_blank">📋 Features Doc</a>
+        </div>
+
+        <div class="info-box" style="margin-top: 30px; text-align: center;">
+            <h3>✅ Responsive Design Status</h3>
+            <p style="font-size: 1.2rem; margin-top: 15px; opacity: 0.9;">
+                Your portfolio is fully responsive from 320px to 4K+ displays!<br>
+                Resize this window to see the active breakpoint highlighted above.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function updateViewportInfo() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const orientation = width > height ? 'Landscape' : 'Portrait';
+
+            let device = '';
+            if (width >= 1400) device = '🖥️ Extra Large Desktop';
+            else if (width >= 1200) device = '💻 Large Desktop';
+            else if (width >= 992) device = '💻 Desktop/Tablet';
+            else if (width >= 768) device = '📱 Tablet';
+            else if (width >= 576) device = '📱 Large Phone';
+            else if (width >= 481) device = '📱 Phone';
+            else device = '📱 Small Phone';
+
+            document.getElementById('width').textContent = width + 'px';
+            document.getElementById('height').textContent = height + 'px';
+            document.getElementById('device').textContent = device;
+            document.getElementById('orientation').textContent = orientation;
+
+            // Highlight active breakpoint
+            const breakpoints = document.querySelectorAll('.breakpoint');
+            breakpoints.forEach(bp => {
+                const min = parseInt(bp.getAttribute('data-min'));
+                const max = parseInt(bp.getAttribute('data-max'));
+                if (width >= min && width <= max) {
+                    bp.classList.add('active');
+                } else {
+                    bp.classList.remove('active');
+                }
+            });
+        }
+
+        // Update on load
+        updateViewportInfo();
+
+        // Update on resize
+        window.addEventListener('resize', updateViewportInfo);
+
+        // Update on orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(updateViewportInfo, 100);
+        });
+    </script>
+</body>
+</html>

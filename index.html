@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="description" content="The Guiding Hand Initiative (TGHI) - Building Futures, Healing Lives. Empowering first-generation learners and marginalized youth in Tanzania.">
+    <meta name="theme-color" content="#1E5A8E">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>TGHI - The Guiding Hand Initiative</title>
     
     <!-- Bootstrap CSS -->
@@ -27,7 +30,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#home">
-                <img src="assets/images/tghi-logo.jpg" alt="TGHI Logo" class="logo-img">
+                <div class="navbar-logo-wrapper">
+                    <img src="assets/images/tghi-logo.jpg" alt="TGHI Logo" class="logo-img">
+                    <div class="navbar-logo-ring"></div>
+                </div>
                 <span class="ms-2 brand-text">TGHI</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -51,6 +57,9 @@
                         <a class="nav-link" href="#sdgs">SDGs</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#stories">Success Stories</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#team">Team</a>
                     </li>
                     <li class="nav-item">
@@ -66,6 +75,23 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
+        <!-- SVG Definitions for animations -->
+        <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+            <defs>
+                <linearGradient id="countGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#1E5A8E;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#F9A826;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+        
+        <!-- Animated Background Images -->
+        <div class="hero-bg-images">
+            <div class="hero-bg-image hero-bg-1"></div>
+            <div class="hero-bg-image hero-bg-2"></div>
+            <div class="hero-bg-image hero-bg-3"></div>
+        </div>
+        
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
@@ -358,6 +384,112 @@
         </div>
     </section>
 
+    <!-- Success Stories Section -->
+    <section id="stories" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Success Stories</h2>
+                    <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Inspiring journeys of resilience, hope, and transformation</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Story 1: Anthony Werema Mwita -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-avatar">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="story-meta">
+                                <h4>Anthony Werema Mwita</h4>
+                                <p class="story-subtitle">First-Generation Learner | Wildlife Conservation Enthusiast</p>
+                                <span class="story-badge">TGHI Family Member</span>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <p>Anthony Werema Mwita is a 21-year-old first-generation learner who completed his A-level studies at Namwai High School, specializing in Physics, Chemistry, and Biology (PCB). He first graduated from secondary school in 2022, achieving Division One (1.12) and was selected to join Namwai High School for A-level studies. However, financial challenges and lack of guidance nearly forced him to discontinue his education.</p>
+                            
+                            <div class="story-highlight">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Through the support and generosity of the TGHI family, Anthony received full financial and material assistance that enabled him to continue and successfully complete his studies.</p>
+                            </div>
+                            
+                            <p>He later graduated with Division One (1.8) at A-level and is now preparing to join Sokoine University of Agriculture (SUA) in Morogoro to pursue a Bachelor's Degree in Wildlife Conservation and Management.</p>
+                            
+                            <div class="story-impact">
+                                <i class="fas fa-heart"></i>
+                                <p><strong>Impact:</strong> His story reflects the power of opportunity, resilience, and community support, and all that first-generation learners need to succeed.</p>
+                            </div>
+                        </div>
+                        <div class="story-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Division 1 (1.8)</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-university"></i>
+                                <span>SUA - Wildlife Conservation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 2: Masoud Abdala Nicholus -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="story-meta">
+                                <h4>Masoud Abdala Nicholus</h4>
+                                <p class="story-subtitle">Community Engagement & Policy Advocacy Enthusiast</p>
+                                <span class="story-badge">First-Generation Learner</span>
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <p>Masoud Abdala Nicholus is a student from Tumekuja Secondary School, where he previously served as Prime Minister in the school government. As a first-generation learner, he stands to represent and inspire other first-generation students with great potential who often lack guidance and confidence.</p>
+                            
+                            <div class="story-highlight">
+                                <i class="fas fa-quote-left"></i>
+                                <p>By joining The Guiding Hand Initiative (TGHI), Masoud seeks to strengthen his voice in education and community development while advocating for equal opportunities and empowerment for all young people.</p>
+                            </div>
+                            
+                            <div class="story-impact">
+                                <i class="fas fa-star"></i>
+                                <p><strong>Role:</strong> Youth advocate representing first-generation learners and championing equal opportunities in education.</p>
+                            </div>
+                        </div>
+                        <div class="story-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-school"></i>
+                                <span>Tumekuja Secondary School</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-landmark"></i>
+                                <span>Former School PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="row mt-5">
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <div class="stories-cta">
+                        <h4>Your Story Matters Too</h4>
+                        <p>Every journey is unique. Share your story with TGHI and inspire others.</p>
+                        <a href="#contact" class="btn btn-primary btn-lg">Share Your Story</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Team Section -->
     <section id="team" class="py-5">
         <div class="container">
@@ -365,18 +497,28 @@
                 <div class="col-lg-12 text-center mb-5">
                     <h2 class="section-title" data-aos="fade-up">Our Team</h2>
                     <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Meet the dedicated individuals driving change for first-generation learners</p>
                 </div>
             </div>
-            <div class="row justify-content-center">
+
+            <!-- Leadership Team -->
+            <div class="row mb-5">
+                <div class="col-lg-12 mb-4">
+                    <h3 class="team-category-title" data-aos="fade-up">Leadership</h3>
+                </div>
+                
+                <!-- Founder & Executive Director -->
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
                     <div class="team-card">
                         <div class="team-image">
-                            <img src="assets/images/tghi-logo.jpg" alt="Barnaba Zakaria Madirisha">
+                            <img src="assets/images/Barnaba.jpg" alt="Barnaba Zakaria Madirisha">
+                            <div class="team-overlay">
+                                <p class="team-bio-short">Passionate about empowering first-generation learners and creating opportunities for marginalized youth.</p>
+                            </div>
                         </div>
                         <div class="team-info">
                             <h5>Barnaba Zakaria Madirisha</h5>
                             <p class="team-role">Founder & Executive Director</p>
-                            <p class="team-bio">Passionate about empowering first-generation learners and creating opportunities for marginalized youth across Tanzania.</p>
                             <div class="team-social">
                                 <a href="mailto:barnabamadirisha@gmail.com"><i class="fas fa-envelope"></i></a>
                                 <a href="tel:+255782081535"><i class="fas fa-phone"></i></a>
@@ -384,37 +526,283 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Placeholder for future team members -->
-                <div class="col-lg-8">
-                    <div class="team-structure" data-aos="fade-up">
-                        <h4 class="mb-4">Our Implementation Structure</h4>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <div class="structure-item">
-                                    <i class="fas fa-users-cog me-2"></i>
-                                    <span>Volunteer Mentors & Local Ambassadors</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="structure-item">
-                                    <i class="fas fa-chess-board me-2"></i>
-                                    <span>Strategic Advisory Board</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="structure-item">
-                                    <i class="fas fa-project-diagram me-2"></i>
-                                    <span>Community-based Program Coordinators</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="structure-item">
-                                    <i class="fas fa-handshake me-2"></i>
-                                    <span>School & Youth Club Collaborators</span>
+
+                <!-- Add more leadership members here as they join -->
+                <div class="col-lg-8 col-md-6" data-aos="fade-up">
+                    <div class="team-join-card">
+                        <i class="fas fa-users"></i>
+                        <h5>Join Our Leadership Team</h5>
+                        <p>We're looking for passionate individuals to join TGHI's leadership and help shape the future of youth empowerment in Tanzania.</p>
+                        <a href="#contact" class="btn btn-outline-primary">Express Interest</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Team Members -->
+            <div class="row mb-5">
+                <div class="col-lg-12 mb-4">
+                    <h3 class="team-category-title" data-aos="fade-up">Core Team Members</h3>
+                </div>
+
+                <!-- Team Member 1: Masoud Abdala Nicholus -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Masoud Abdala Nicholus">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
+                        <div class="member-info">
+                            <h6>Masoud Abdala Nicholus</h6>
+                            <p class="member-role">Community Engagement Lead</p>
+                            <p class="member-bio">Student leader advocating for first-generation learners and policy change.</p>
+                            <span class="member-badge">First-Generation Learner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2: Anthony Werema Mwita -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Anthony Werema Mwita">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h6>Anthony Werema Mwita</h6>
+                            <p class="member-role">Youth Ambassador</p>
+                            <p class="member-bio">Wildlife conservation student inspiring rural youth through education.</p>
+                            <span class="member-badge">Success Story</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3: Placeholder -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Team Member">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h6>Your Name Here</h6>
+                            <p class="member-role">Role/Position</p>
+                            <p class="member-bio">Brief bio about your role and contribution to TGHI's mission.</p>
+                            <span class="member-badge">Core Team</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4: Placeholder -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Team Member">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h6>Your Name Here</h6>
+                            <p class="member-role">Role/Position</p>
+                            <p class="member-bio">Brief bio about your role and contribution to TGHI's mission.</p>
+                            <span class="member-badge">Core Team</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 5: Placeholder -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Team Member">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h6>Your Name Here</h6>
+                            <p class="member-role">Role/Position</p>
+                            <p class="member-bio">Brief bio about your role and contribution to TGHI's mission.</p>
+                            <span class="member-badge">Core Team</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 6: Placeholder -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Team Member">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h6>Your Name Here</h6>
+                            <p class="member-role">Role/Position</p>
+                            <p class="member-bio">Brief bio about your role and contribution to TGHI's mission.</p>
+                            <span class="member-badge">Core Team</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 7: Placeholder -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Team Member">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h6>Your Name Here</h6>
+                            <p class="member-role">Role/Position</p>
+                            <p class="member-bio">Brief bio about your role and contribution to TGHI's mission.</p>
+                            <span class="member-badge">Core Team</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 8: Placeholder -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Team Member">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h6>Your Name Here</h6>
+                            <p class="member-role">Role/Position</p>
+                            <p class="member-bio">Brief bio about your role and contribution to TGHI's mission.</p>
+                            <span class="member-badge">Core Team</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 9: Placeholder -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member-photo-card">
+                        <div class="member-photo">
+                            <img src="assets/images/tghi-logo.jpg" alt="Team Member">
+                            <div class="member-photo-overlay">
+                                <div class="member-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h6>Your Name Here</h6>
+                            <p class="member-role">Role/Position</p>
+                            <p class="member-bio">Brief bio about your role and contribution to TGHI's mission.</p>
+                            <span class="member-badge">Core Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volunteer Mentors & Ambassadors -->
+            <div class="row mb-5">
+                <div class="col-lg-12 mb-4">
+                    <h3 class="team-category-title" data-aos="fade-up">Volunteer Mentors & Local Ambassadors</h3>
+                </div>
+                <div class="col-lg-12">
+                    <div class="volunteer-section" data-aos="fade-up">
+                        <div class="row align-items-center">
+                            <div class="col-md-7">
+                                <h5>Become a Volunteer Mentor</h5>
+                                <p>Join our network of mentors and ambassadors making a real difference in the lives of first-generation learners across Tanzania. Whether you have 2 hours a week or 2 days a month, your contribution matters.</p>
+                                <ul class="volunteer-benefits">
+                                    <li><i class="fas fa-check-circle"></i> Flexible commitment options</li>
+                                    <li><i class="fas fa-check-circle"></i> Training and support provided</li>
+                                    <li><i class="fas fa-check-circle"></i> Make measurable impact</li>
+                                    <li><i class="fas fa-check-circle"></i> Join a passionate community</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5 text-center">
+                                <div class="volunteer-count-wrapper">
+                                    <div class="count-circle" data-count="15">
+                                        <svg class="count-progress" width="180" height="180">
+                                            <circle class="count-bg" cx="90" cy="90" r="80"></circle>
+                                            <circle class="count-fill" cx="90" cy="90" r="80"></circle>
+                                        </svg>
+                                        <div class="count-content">
+                                            <span class="count-number">15+</span>
+                                            <span class="count-label">Active Volunteers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#contact" class="btn btn-primary btn-lg mt-4">Become a Mentor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Structure -->
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <h3 class="team-category-title" data-aos="fade-up">Our Implementation Structure</h3>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="structure-card">
+                        <i class="fas fa-users-cog"></i>
+                        <h6>Volunteer Mentors</h6>
+                        <p>Experienced individuals guiding youth</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="structure-card">
+                        <i class="fas fa-chess-board"></i>
+                        <h6>Advisory Board</h6>
+                        <p>Strategic guidance and oversight</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="structure-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h6>Program Coordinators</h6>
+                        <p>Community-based implementation</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="structure-card">
+                        <i class="fas fa-handshake"></i>
+                        <h6>School Collaborators</h6>
+                        <p>Partnership with institutions</p>
                     </div>
                 </div>
             </div>
@@ -428,43 +816,148 @@
                 <div class="col-lg-12 text-center mb-5">
                     <h2 class="section-title" data-aos="fade-up">Partnership Aspirations</h2>
                     <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Organizations we aim to collaborate with</p>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Organizations we aim to collaborate with to amplify our impact</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="partner-card">
+            <!-- First Carousel Row (Left to Right) -->
+            <div class="partners-carousel-wrapper" data-aos="fade-up">
+                <div class="partners-carousel-row">
+                    <!-- Partner 1 -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Build Future Initiative" class="partner-logo-img">
+                        </div>
                         <h6>Build Future Initiative</h6>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="partner-card">
+
+                    <!-- Partner 2 -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Binti Kiranja Initiative" class="partner-logo-img">
+                        </div>
                         <h6>Binti Kiranja Initiative</h6>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="partner-card">
+
+                    <!-- Partner 3 -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Nisajile Foundation" class="partner-logo-img">
+                        </div>
                         <h6>Nisajile Foundation</h6>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="partner-card">
+
+                    <!-- Partner 4 -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="UNDP Tanzania" class="partner-logo-img">
+                        </div>
+                        <h6>UNDP Tanzania</h6>
+                    </div>
+
+                    <!-- Duplicate for seamless loop -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Build Future Initiative" class="partner-logo-img">
+                        </div>
+                        <h6>Build Future Initiative</h6>
+                    </div>
+
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Binti Kiranja Initiative" class="partner-logo-img">
+                        </div>
+                        <h6>Binti Kiranja Initiative</h6>
+                    </div>
+
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Nisajile Foundation" class="partner-logo-img">
+                        </div>
+                        <h6>Nisajile Foundation</h6>
+                    </div>
+
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="UNDP Tanzania" class="partner-logo-img">
+                        </div>
                         <h6>UNDP Tanzania</h6>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="500">
-                    <div class="partner-card">
+            </div>
+
+            <!-- Second Carousel Row (Right to Left) -->
+            <div class="partners-carousel-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="partners-carousel-row reverse">
+                    <!-- Partner 5 -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="YUNA Tanzania" class="partner-logo-img">
+                        </div>
                         <h6>YUNA Tanzania</h6>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="600">
-                    <div class="partner-card">
+
+                    <!-- Partner 6 -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Unite Scholars Program" class="partner-logo-img">
+                        </div>
                         <h6>Unite Scholars Program</h6>
                     </div>
+
+                    <!-- Partner 7 -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Climate Grantmakers" class="partner-logo-img">
+                        </div>
+                        <h6>Climate Grantmakers</h6>
+                    </div>
+
+                    <!-- Partner 8 -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Education Partners" class="partner-logo-img">
+                        </div>
+                        <h6>Education Partners</h6>
+                    </div>
+
+                    <!-- Duplicate for seamless loop -->
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="YUNA Tanzania" class="partner-logo-img">
+                        </div>
+                        <h6>YUNA Tanzania</h6>
+                    </div>
+
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Unite Scholars Program" class="partner-logo-img">
+                        </div>
+                        <h6>Unite Scholars Program</h6>
+                    </div>
+
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Climate Grantmakers" class="partner-logo-img">
+                        </div>
+                        <h6>Climate Grantmakers</h6>
+                    </div>
+
+                    <div class="partner-logo-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="Education Partners" class="partner-logo-img">
+                        </div>
+                        <h6>Education Partners</h6>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-4 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="700">
-                    <div class="partner-card">
-                        <h6>Local & International Climate & Education Grantmakers</h6>
+            </div>
+
+            <!-- Partnership CTA -->
+            <div class="row mt-5">
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <div class="partnership-cta">
+                        <h4>Interested in Partnering with TGHI?</h4>
+                        <p>Let's collaborate to create greater impact for first-generation learners</p>
+                        <a href="#contact" class="btn btn-primary btn-lg">Become a Partner</a>
                     </div>
                 </div>
             </div>
@@ -550,41 +1043,115 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <!-- Animated Background Logos -->
+        <div class="footer-bg-logos">
+            <div class="footer-logo-float footer-logo-1">
+                <img src="assets/images/tghi-logo.jpg" alt="TGHI">
+            </div>
+            <div class="footer-logo-float footer-logo-2">
+                <img src="assets/images/tghi-logo.jpg" alt="TGHI">
+            </div>
+            <div class="footer-logo-float footer-logo-3">
+                <img src="assets/images/tghi-logo.jpg" alt="TGHI">
+            </div>
+            <div class="footer-logo-float footer-logo-4">
+                <img src="assets/images/tghi-logo.jpg" alt="TGHI">
+            </div>
+            <div class="footer-logo-float footer-logo-5">
+                <img src="assets/images/tghi-logo.jpg" alt="TGHI">
+            </div>
+            <div class="footer-logo-float footer-logo-6">
+                <img src="assets/images/tghi-logo.jpg" alt="TGHI">
+            </div>
+        </div>
+
+        <div class="container footer-content">
             <div class="row">
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="footer-brand">
-                        <img src="assets/images/tghi-logo.jpg" alt="TGHI Logo" class="footer-logo">
+                        <div class="footer-logo-wrapper">
+                            <img src="assets/images/tghi-logo.jpg" alt="TGHI Logo" class="footer-logo">
+                            <div class="footer-logo-ring"></div>
+                        </div>
                         <h5>The Guiding Hand Initiative</h5>
                         <p class="footer-tagline">Building Futures, Healing Lives</p>
+                        <p class="footer-description">Empowering first-generation learners and marginalized youth across Tanzania to break cycles of poverty and trauma.</p>
+                        <div class="footer-social">
+                            <a href="#" class="footer-social-icon" title="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="footer-social-icon" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="footer-social-icon" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="footer-social-icon" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="footer-social-icon" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <h6 class="footer-title">Quick Links</h6>
                     <ul class="footer-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#sdgs">SDGs</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about"><i class="fas fa-arrow-right"></i> About Us</a></li>
+                        <li><a href="#founder"><i class="fas fa-arrow-right"></i> Founder's Note</a></li>
+                        <li><a href="#programs"><i class="fas fa-arrow-right"></i> Programs</a></li>
+                        <li><a href="#sdgs"><i class="fas fa-arrow-right"></i> SDG Goals</a></li>
+                        <li><a href="#stories"><i class="fas fa-arrow-right"></i> Success Stories</a></li>
+                        <li><a href="#team"><i class="fas fa-arrow-right"></i> Our Team</a></li>
+                        <li><a href="#partners"><i class="fas fa-arrow-right"></i> Partners</a></li>
+                        <li><a href="#contact"><i class="fas fa-arrow-right"></i> Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <h6 class="footer-title">Our Focus</h6>
                     <ul class="footer-links">
-                        <li>First-Generation Learners</li>
-                        <li>Marginalized Youth</li>
-                        <li>Teen Mothers</li>
-                        <li>Rural & Urban-Poor Youth</li>
-                        <li>Youth with Disabilities</li>
+                        <li><i class="fas fa-check-circle"></i> First-Generation Learners</li>
+                        <li><i class="fas fa-check-circle"></i> Marginalized Youth</li>
+                        <li><i class="fas fa-check-circle"></i> Teen Mothers</li>
+                        <li><i class="fas fa-check-circle"></i> Rural Youth</li>
+                        <li><i class="fas fa-check-circle"></i> Urban-Poor Youth</li>
+                        <li><i class="fas fa-check-circle"></i> Youth with Disabilities</li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <h6 class="footer-title">Contact Info</h6>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tanzania, East Africa</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@tghi.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+255 XXX XXX XXX</span>
+                        </li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Footer Bottom -->
             <div class="row">
                 <div class="col-12">
+                    <div class="footer-divider"></div>
                     <div class="footer-bottom">
-                        <p>&copy; 2025 The Guiding Hand Initiative (TGHI). All rights reserved.</p>
-                        <p>EST. 2025 | Tanzania, East Africa</p>
+                        <div class="footer-bottom-left">
+                            <p>&copy; 2025 The Guiding Hand Initiative (TGHI). All rights reserved.</p>
+                        </div>
+                        <div class="footer-bottom-center">
+                            <p class="footer-est">EST. 2025</p>
+                        </div>
+                        <div class="footer-bottom-right">
+                            <p>Made with <i class="fas fa-heart"></i> in Tanzania</p>
+                        </div>
                     </div>
                 </div>
             </div>
