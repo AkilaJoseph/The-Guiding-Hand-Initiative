@@ -259,19 +259,19 @@ a {
 
 /* Background Image Placeholders - Replace with your actual images */
 .hero-bg-1 {
-    background-image: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&q=80');
+    background-image: url('../images/hero1.jpeg');
     animation-name: imageSlide1;
     animation-delay: 0s;
 }
 
 .hero-bg-2 {
-    background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920&q=80');
+    background-image: url('../images/hero2.jpeg');
     animation-name: imageSlide2;
     animation-delay: 8s;
 }
 
 .hero-bg-3 {
-    background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80');
+    background-image: url('../images/hero3.jpeg');
     animation-name: imageSlide3;
     animation-delay: 16s;
 }
