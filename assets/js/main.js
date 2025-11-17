@@ -174,27 +174,53 @@ function initContactForm() {
         const originalButtonText = submitButton.textContent;
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
-        
-        // Simulate form submission (In production, this would send to a backend)
-        setTimeout(function() {
-            // Show success message
-            formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
-            formMessage.classList.add('success');
-            
-            // Reset form
-            form.reset();
-            
+
+        // Submit to Formspree using AJAX
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show success message
+                formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                formMessage.classList.add('success');
+
+                // Reset form
+                form.reset();
+
+                // Remove success message after 8 seconds
+                setTimeout(function() {
+                    formMessage.textContent = '';
+                    formMessage.className = 'form-message mt-3';
+                }, 8000);
+            } else {
+                return response.json().then(data => {
+                    if (data.errors) {
+                        formMessage.textContent = data.errors.map(error => error.message).join(', ');
+                    } else {
+                        formMessage.textContent = 'Oops! There was a problem submitting your form';
+                    }
+                    formMessage.classList.add('error');
+                });
+            }
+        })
+        .catch(error => {
+            // Show error message
+            formMessage.textContent = 'An error occurred while sending your message. Please try again or contact us directly at info@theguidinghand.org';
+            formMessage.classList.add('error');
+            console.error('Form submission error:', error);
+        })
+        .finally(() => {
             // Reset button
             submitButton.textContent = originalButtonText;
             submitButton.disabled = false;
-            
-            // Remove success message after 5 seconds
-            setTimeout(function() {
-                formMessage.textContent = '';
-                formMessage.className = 'form-message mt-3';
-            }, 5000);
-            
-        }, 1500);
+        });
     });
 }
 

@@ -2832,15 +2832,53 @@ section#about {
     }
     
     .volunteer-section {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
     }
-    
+
+    .volunteer-section h5 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .volunteer-section p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
     .volunteer-section .row {
         flex-direction: column-reverse;
     }
-    
-    .volunteer-count {
-        margin-bottom: 2rem;
+
+    .volunteer-count-wrapper {
+        margin: 2rem 0 2.5rem 0;
+    }
+
+    .count-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .count-number {
+        font-size: 2.4rem;
+    }
+
+    .count-label {
+        font-size: 0.9rem;
+    }
+
+    .volunteer-benefits {
+        margin-top: 1.5rem;
+    }
+
+    .volunteer-benefits li {
+        padding: 0.7rem 0;
+        font-size: 0.95rem;
+        gap: 0.8rem;
+    }
+
+    .volunteer-benefits i {
+        font-size: 1.1rem;
+        flex-shrink: 0;
     }
 }
 
@@ -3000,16 +3038,33 @@ section#about {
     }
     
     .volunteer-section {
-        padding: 1.5rem;
+        padding: 1.5rem 1.2rem;
+        border-radius: 15px;
     }
-    
+
+    .volunteer-section h5 {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .volunteer-section p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .volunteer-count-wrapper {
+        margin: 1.5rem 0 2rem 0;
+    }
+
     .count-circle {
-        width: 120px;
-        height: 120px;
+        width: 140px;
+        height: 140px;
     }
-    
+
     .count-number {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     /* Partners */
@@ -3498,23 +3553,47 @@ section#about {
     }
     
     .volunteer-section {
-        padding: 1rem;
+        padding: 1.5rem 1rem;
+        border-radius: 12px;
     }
-    
+
     .volunteer-section h5 {
         font-size: 1.3rem;
+        text-align: center;
+        line-height: 1.4;
     }
-    
+
+    .volunteer-section p {
+        font-size: 0.9rem;
+        text-align: center;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+
+    .volunteer-benefits {
+        margin-top: 1.2rem;
+    }
+
     .volunteer-benefits li {
         font-size: 0.9rem;
         padding: 0.6rem 0;
+        gap: 0.6rem;
+        align-items: flex-start;
     }
-    
+
+    .volunteer-benefits i {
+        margin-top: 0.2rem;
+    }
+
+    .volunteer-count-wrapper {
+        margin: 1.5rem 0;
+    }
+
     .count-circle {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
-    
+
     .count-number {
         font-size: 1.8rem;
     }
@@ -3522,7 +3601,14 @@ section#about {
     .count-label {
         font-size: 0.8rem;
     }
-    
+
+    .volunteer-section .btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 0.95rem;
+        padding: 0.9rem 1.5rem;
+    }
+
     .structure-card {
         padding: 1.5rem 1rem;
     }
